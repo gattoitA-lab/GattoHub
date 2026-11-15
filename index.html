@@ -3605,6 +3605,8 @@ video {
 .seo-static p{margin:0 0 14px}
 .seo-static ul{margin:0 0 14px;padding-left:20px}
 .seo-static li{margin:0 0 8px}
+/* Download diretto rimosso: le versioni si scaricano dalla cartella "Tutte le versioni di BlockWorld" */
+[data-testid="hero-actions"] a[download]{display:none!important}
 </style>
 <meta property="og:url" content="https://gattoita-lab.github.io/GattoHub/">
 <meta name="apple-mobile-web-app-title" content="GattoHub">
@@ -3687,7 +3689,7 @@ function createCore(env) {
     var votes = votesAll[g.id] || {};
     var vals = Object.keys(votes).map(function (k) { return votes[k]; });
     var avg = vals.length ? Math.round((vals.reduce(function (a, b) { return a + b; }, 0) / vals.length) * 10) / 10 : 0;
-    var fu = g.file_path ? env.fileUrl(g.file_path) : (g.id === "blockworld" ? "BlockWorld.html" : "");
+    var fu = g.file_path ? env.fileUrl(g.file_path) : (g.id === "blockworld" ? "https://drive.google.com/drive/folders/1X37MnGgWdOs5IRZmOLzufHZ92Q4RISiO" : "");
     return {
       id: g.id, builtin: !!g.builtin, name: g.name, desc: g.desc || "", link: g.link || "",
       file_url: fu, screenshot_url: resolveImg(g.screenshot),
@@ -13187,7 +13189,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
 
-const FILE_URL = "BlockWorld.html";
+const FILE_URL = "https://drive.google.com/drive/folders/1X37MnGgWdOs5IRZmOLzufHZ92Q4RISiO";
 const PROFILE_ICONS = {
   gamepad: lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"],
   ghost: lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -13529,12 +13531,12 @@ const dict = {
     navArcade: "Arcade",
     navControls: "Come si gioca",
     navCommunity: "Community",
-    downloadBtn: "Scarica BlockWorld.html",
+    downloadBtn: "Ultima versione di BlockWorld",
     eyebrow: "Un intero mondo voxel · Un solo file HTML",
     heroLine1: "COSTRUISCI.",
     heroLine2: "ESPLORA.",
     heroLine3: "SOPRAVVIVI.",
-    heroSub: "BlockWorld è un universo a blocchi generato dal vivo: montagne, caverne, minerali e lava fino a quota −1000. Niente installazioni, niente account. Scarica il file, aprilo nel browser e gioca.",
+    heroSub: "BlockWorld è un universo a blocchi generato dal vivo: montagne, caverne, minerali e lava fino a quota −1000. Niente installazioni, niente account. Per avere l'ultima versione apri «Tutte le versioni di BlockWorld»: il pulsante di download diretto non è più disponibile, le versioni aggiornate si scaricano da lì.",
     fileMeta: "HTML · 248 KB · WebGL · Offline",
     counterLabel: "download",
     marquee: ["ESPLORA", "COSTRUISCI", "SOPRAVVIVI", "MINA", "CREA"],
@@ -13730,7 +13732,7 @@ const dict = {
     navArcade: "Arcade",
     navControls: "How to play",
     navCommunity: "Community",
-    downloadBtn: "Download BlockWorld.html",
+    downloadBtn: "Latest BlockWorld version",
     eyebrow: "A whole voxel world · One single HTML file",
     heroLine1: "BUILD.",
     heroLine2: "EXPLORE.",
